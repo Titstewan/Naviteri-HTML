@@ -4,201 +4,205 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="Naviteri/nv-icon.png" />
     <!-- The main CSS that defines the page's style -->
-    <style type="text/css">
-        body {
-            font-family: Palatino Linotype, Georgia, sans-serif;
-            background-color: #404040;
-        }
-        .mainp {
-            background-color: #f6f6f6;
-            width: 650px;
-            padding: 15px;
-            margin: 0 auto 10px;
-        }
-        .blogp {
-            background-color: transparent;
-            margin: 33px;
-            text-align: left;
-            font-size: 11pt;
-        }
-        .titlelink {
-            color: #000000 !important;
-        }
-        a:link {
-            color: #0000ff;
-            text-decoration: none;
-        }
-        a:visited {
-            color: #0000ea;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .entry-date {
-            font-size: 8pt;
-        }
-        .entry-title {
-            font-size: 20pt;
-            font-weight: bold;
-        }
-        .mainh {
-            height: 33px;
-            width: 100%;
-            z-index: 1000;
-            background-color: rgba(246, 246, 246, 0.9);
-            position: fixed;
-            left: 0;
-            -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
-            box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
-            display: block;
-            top: 0px;
-        }
-        .post_table {
-            border: 1px solid grey;
-            border-collapse: collapse;
-        }
-        .post_tr {
-            border: 1px solid grey;
-            border-collapse: collapse;
-        }
-        td {
-            padding: 10px;
-        }
-        .nav {
-            width: 100%;
-        }
-            .nav, .nav a, .nav ul, .nav li, .nav div, .nav form, .nav input {
-                margin: 0;
-                padding: 0;
-                border: none;
-                outline: none;
-            }
-        #vawm {
-            color: #656565;
-        }
-        .nav li {
-            list-style: none;
-            padding-left: 15%;
-        }
-        .nav {
-            display: inline-block;
+<style type="text/css">
+body {
+    font-family: Palatino Linotype, Georgia, sans-serif;
+    background-color: #404040;
+}
+.mainp {
+    background-color: #f6f6f6;
+    width: 650px;
+    padding: 15px;
+    margin: 0 auto 10px;
+}
+.blogp {
+    background-color: transparent;
+    margin: 33px;
+    text-align: left;
+    font-size: 11pt;
+}
+.titlelink {
+    color: #000000 !important;
+}
+a:link {
+    color: #0000ff;
+    text-decoration: none;
+}
+a:visited {
+    color: #0000ea;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.entry-date {
+    font-size: 8pt;
+}
+.entry-title {
+    font-size: 20pt;
+    font-weight: bold;
+}
+.mainh {
+    height: 33px;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(246, 246, 246, 0.9);
+    position: fixed;
+    left: 0;
+    -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+    display: block;
+    top: 0px;
+}
+.post_table {
+    border: 1px solid grey;
+    border-collapse: collapse;
+}
+.post_tr {
+    border: 1px solid grey;
+    border-collapse: collapse;
+}
+td {
+    padding: 10px;
+}
+.nav {
+    width: 100%;
+}
+    .nav, .nav a, .nav ul, .nav li, .nav div, .nav form, .nav input {
+        margin: 0;
+        padding: 0;
+        border: none;
+        outline: none;
+    }
+#vawm {
+    color: #656565;
+}
+.nav li {
+    list-style: none;
+    padding-left: 15%;
+}
+.nav {
+    display: inline-block;
+    position: relative;
+    cursor: default;
+    z-index: 500;
+}
+    .nav > li {
+        display: block;
+        float: left;
+    }
+        .nav > li > a {
             position: relative;
-            cursor: default;
-            z-index: 500;
+            display: block;
+            z-index: 510;
+            height: 33px;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 33px;
+            cursor: pointer;
+            text-decoration: none;
         }
-            .nav > li {
-                display: block;
-                float: left;
+        .nav > li:hover > a {
+            text-shadow: 0 0 2px rgba(240, 240, 240, 0.95);
+        }
+        .nav > li > div {
+            position: absolute;
+            display: block;
+            width: 100%;
+            top: 33px;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            overflow: hidden;
+            background-color: rgba(240, 240, 240, 0.95);
+            transition: opacity .5s ease-in-out;
+        }
+        .nav > li:hover > div {
+            opacity: 1;
+            visibility: visible;
+            overflow: visible;
+        }
+    .nav .nav-column {
+        float: left;
+        height: 575px;
+        width: 565px;
+        border: 1px solid grey;
+        font-size: 11pt;
+        line-height: 95%;
+        overflow-y: scroll;
+        padding: 10px;
+        overscroll-behavior: contain;
+    }
+        .nav .nav-column li a {
+            display: block;
+        }
+            .nav .nav-column li a:hover {
+                color: #f0f0f0;
             }
-                .nav > li > a {
-                    position: relative;
-                    display: block;
-                    z-index: 510;
-                    height: 33px;
-                    font-weight: bold;
-                    font-size: 14px;
-                    line-height: 33px;
-                }
-                .nav > li:hover > a {
-                    text-shadow: 0 0 2px rgba(240, 240, 240, 0.95);
-                }
-                .nav > li > div {
-                    position: absolute;
-                    display: block;
-                    width: 100%;
-                    top: 33px;
-                    left: 0;
-                    opacity: 0;
-                    visibility: hidden;
-                    overflow: hidden;
-                    background-color: rgba(240, 240, 240, 0.95);
-                }
-                .nav > li:hover > div {
-                    opacity: 1;
-                    visibility: visible;
-                    overflow: visible;
-                }
-            .nav .nav-column {
-                float: left;
-                height: 768px;
-                width: 565px;
-                border: 1px solid grey;
-                font-size: 11pt;
-                line-height: 95%;
-                overflow-y: scroll;
-                padding: 10px;
-            }
-                .nav .nav-column li a {
-                    display: block;
-                }
-                    .nav .nav-column li a:hover {
-                        color: #f0f0f0;
-                    }
-        .headerindex {
-            max-width: 585px;
-            padding: 0px;
-            margin: 0 auto;
-            top: 0px;
-        }
-        .comtitle {
-            border-bottom: 1px dotted grey;
-        }
-        .comlevel1 {
-            border-left: 2px solid grey;
-            background-color: #efefef;
-            padding: 10px;
-            margin: 25px 5px 0px 0px;
-        }
-        .comlevel2 {
-            border-left: 2px solid grey;
-            background-color: #dfdfdf;
-            padding: 10px;
-            margin: 0px 5px 0px 50px;
-        }
-        .comlevel3 {
-            border-left: 2px solid grey;
-            background-color: #efefef;
-            padding: 10px;
-            margin: 0px 5px 0px 100px;
-        }
-        .comlevel4 {
-            border-left: 2px solid grey;
-            background-color: #dfdfdf;
-            padding: 10px;
-            margin: 0px 5px 0px 150px;
-        }
-        .comlevel5 {
-            border-left: 2px solid grey;
-            background-color: #efefef;
-            padding: 10px;
-            margin: 0px 5px 0px 150px;
-        }
-        .comlevel2a {
-            border-left: 2px solid grey;
-            background-color: #efefef;
-            padding: 10px;
-            margin: 0px 5px 0px 50px;
-        }
-        .comlevel3a {
-            border-left: 2px solid grey;
-            background-color: #dfdfdf;
-            padding: 10px;
-            margin: 0px 5px 0px 100px;
-        }
-        .comlevel4a {
-            border-left: 2px solid grey;
-            background-color: #efefef;
-            padding: 10px;
-            margin: 0px 5px 0px 150px;
-        }
-        .comlevel5a {
-            border-left: 2px solid grey;
-            background-color: #dfdfdf;
-            padding: 10px;
-            margin: 0px 5px 0px 150px;
-        }
-    </style>
+.headerindex {
+    max-width: 585px;
+    padding: 0px;
+    margin: 0 auto;
+    top: 0px;
+}
+.comtitle {
+    border-bottom: 1px dotted grey;
+}
+.comlevel1 {
+    border-left: 2px solid grey;
+    background-color: #efefef;
+    padding: 10px;
+    margin: 25px 5px 0px 0px;
+}
+.comlevel2 {
+    border-left: 2px solid grey;
+    background-color: #dfdfdf;
+    padding: 10px;
+    margin: 0px 5px 0px 50px;
+}
+.comlevel3 {
+    border-left: 2px solid grey;
+    background-color: #efefef;
+    padding: 10px;
+    margin: 0px 5px 0px 100px;
+}
+.comlevel4 {
+    border-left: 2px solid grey;
+    background-color: #dfdfdf;
+    padding: 10px;
+    margin: 0px 5px 0px 150px;
+}
+.comlevel5 {
+    border-left: 2px solid grey;
+    background-color: #efefef;
+    padding: 10px;
+    margin: 0px 5px 0px 150px;
+}
+.comlevel2a {
+    border-left: 2px solid grey;
+    background-color: #efefef;
+    padding: 10px;
+    margin: 0px 5px 0px 50px;
+}
+.comlevel3a {
+    border-left: 2px solid grey;
+    background-color: #dfdfdf;
+    padding: 10px;
+    margin: 0px 5px 0px 100px;
+}
+.comlevel4a {
+    border-left: 2px solid grey;
+    background-color: #efefef;
+    padding: 10px;
+    margin: 0px 5px 0px 150px;
+}
+.comlevel5a {
+    border-left: 2px solid grey;
+    background-color: #dfdfdf;
+    padding: 10px;
+    margin: 0px 5px 0px 150px;
+}
+</style>
     <title>Na'viteri</title>
 </head>
 <!-- Info
