@@ -1,4 +1,4 @@
-[![License: GPL v2](https://img.shields.io/badge/license-cc--by--sa--2.0-blue.svg)](https://creativecommons.org/licenses/by-sa/2.0/deed.en)
+[![License: CC BY-SA 2.0](https://img.shields.io/badge/license-cc--by--sa--2.0-blue.svg)](https://creativecommons.org/licenses/by-sa/2.0/deed.en)
 
 # Naviteri-HTML
 A blog copy of Na'viteri.org for offline use.
